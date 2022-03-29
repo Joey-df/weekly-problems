@@ -30,6 +30,7 @@ public class Code03_FindKthSmallestPairDistance {
 		return ans;
 	}
 
+	// 二分
 	public static int smallestDistancePair(int[] nums, int k) {
 		int n = nums.length;
 		Arrays.sort(nums);

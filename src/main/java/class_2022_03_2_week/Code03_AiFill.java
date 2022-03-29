@@ -28,7 +28,7 @@ public class Code03_AiFill {
 	public static class TrieNode {
 		public String word;
 		public int times;
-		public HashMap<String, TrieNode> nextNodes;
+		public HashMap<String, TrieNode> nextNodes; // 下级的路
 		public TreeSet<TrieNode> nextRanks;
 
 		public TrieNode(String w) {

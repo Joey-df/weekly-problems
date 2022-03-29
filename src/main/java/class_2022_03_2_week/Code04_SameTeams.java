@@ -40,7 +40,7 @@ public class Code04_SameTeams {
 				}
 				cur = cur.nexts.get(diff);
 			}
-			cur.indices.add(i);
+			cur.indices.add(i); // 只有每个b数组结束的时候，才会做此操作
 		}
 		int[] ans = new int[m];
 		int n = as.length;
