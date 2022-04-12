@@ -7,6 +7,8 @@ package class_2022_03_4_week;
 // 字节考的问题其实就是这个问题
 // 找到了测试链接 : https://www.luogu.com.cn/problem/CF11B
 // 提交以下所有代码，把主类名改成"Main"，可以直接通过
+// 测试链接：
+// https://leetcode-cn.com/problems/reach-a-number/
 import java.util.Scanner;
 
 public class Code04_JumpToTargets {
