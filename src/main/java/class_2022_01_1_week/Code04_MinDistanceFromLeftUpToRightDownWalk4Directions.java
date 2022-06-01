@@ -15,7 +15,7 @@ public class Code04_MinDistanceFromLeftUpToRightDownWalk4Directions {
 	public static int bestWalk1(int[][] map) {
 		int n = map.length;
 		int m = map[0].length;
-		int step = n * m - 1;
+		int step = n * m - 1; // 最大的可能步数
 		return process(map, n, m, step, 0, 0, 0, 0);
 	}
 
@@ -34,10 +34,10 @@ public class Code04_MinDistanceFromLeftUpToRightDownWalk4Directions {
 		return Math.min(Math.min(p1, p2), Math.min(p3, p4));
 	}
 
-	public static int bestWalk2(int[][] map) {
+	public static int bestWalk2(int[][] matrix) {
 		
-		int n = map.length;
-		int m = map[0].length;
+		int n = matrix.length;
+		int m = matrix[0].length;
 		// 堆
 		// 每一个对象，都是一个小数组
 		// {dis, row, col}
@@ -46,7 +46,7 @@ public class Code04_MinDistanceFromLeftUpToRightDownWalk4Directions {
 		// X,0,1 已经弹出了！ 以后在遇到(0,1)的事情，不管！
 		// poped记录哪些位置弹出，哪些没有！
 		boolean[][] poped = new boolean[n][m];
-		heap.add(new int[] { map[0][0], 0, 0 });
+		heap.add(new int[] { matrix[0][0], 0, 0 });
 		int ans = 0;
 		while (!heap.isEmpty()) {
 			int[] cur = heap.poll();
@@ -62,10 +62,10 @@ public class Code04_MinDistanceFromLeftUpToRightDownWalk4Directions {
 				ans = dis;
 				break;
 			}
-			add(dis, row - 1, col, n, m, map, poped, heap);
-			add(dis, row + 1, col, n, m, map, poped, heap);
-			add(dis, row, col - 1, n, m, map, poped, heap);
-			add(dis, row, col + 1, n, m, map, poped, heap);
+			add(dis, row - 1, col, n, m, matrix, poped, heap);
+			add(dis, row + 1, col, n, m, matrix, poped, heap);
+			add(dis, row, col - 1, n, m, matrix, poped, heap);
+			add(dis, row, col + 1, n, m, matrix, poped, heap);
 		}
 		return ans;
 	}

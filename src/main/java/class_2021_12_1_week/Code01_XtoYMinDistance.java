@@ -22,6 +22,7 @@ public class Code01_XtoYMinDistance {
 				map[i][j] = Integer.MAX_VALUE;
 			}
 		}
+		// 建立路！
 		for (int[] road : roads) {
 			map[road[0]][road[1]] = Math.min(map[road[0]][road[1]], road[2]);
 			map[road[1]][road[0]] = Math.min(map[road[1]][road[0]], road[2]);
@@ -43,6 +44,7 @@ public class Code01_XtoYMinDistance {
 		}
 		visited[cur] = true;
 		int ans = Integer.MAX_VALUE;
+		// cur能到的所有城市，枚举
 		for (int next = 1; next <= n; next++) {
 			if (next != cur && map[cur][next] != Integer.MAX_VALUE) {
 				int rest = process(next, aim, n, map, visited);
@@ -90,8 +92,8 @@ public class Code01_XtoYMinDistance {
 			}
 			computed[cur.city] = true;
 			for (int next = 1; next <= n; next++) {
-				// p在往下走，能到哪些点！
-				// 1）不能是自己 2）当前城市与next城市可达（非int最大值）3）没算过
+				// 这个for循环的含义：p再往下走，能到哪些点！
+				// 1）不能是自己到自己   2）当前城市与next城市可达(非int最大值)  3）next没算过
 				if (next != cur.city && map[cur.city][next] != Integer.MAX_VALUE && !computed[next]) {
 					heap.add(new Node(next, cur.pathSum + map[cur.city][next]));
 				}
