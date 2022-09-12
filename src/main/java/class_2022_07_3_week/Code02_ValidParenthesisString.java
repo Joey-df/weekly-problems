@@ -18,6 +18,7 @@ public class Code02_ValidParenthesisString {
 		// dp[i][j] == 0 没算过！
 		// dp[i][j] == -1 算过了！结果是false！
 		// dp[i][j] == 1 算过了！结果是true！
+
 		return zuo(s, 0, 0, dp);
 	}
 
