@@ -85,7 +85,7 @@ public class Code01_FindAllPeopleWithSecret {
 			int fatheri = find(i);
 			int fatherj = find(j);
 			if (fatheri != fatherj) {
-				father[fatherj] = fatheri;
+				father[fatherj] = fatheri; // j挂到i下面
 				sect[fatheri] |= sect[fatherj];
 			}
 		}
